@@ -1,0 +1,6 @@
+@startuml ホテル
+left to right direction
+actor ホテル従業員 as jyuu #DDDDDD;line:black;line.bold;
+actor 経営者 as keiei #DDDDDD;line:black;line.bold;
+jyuu<|--keiei
+@enduml

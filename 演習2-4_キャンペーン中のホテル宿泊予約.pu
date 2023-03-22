@@ -1,0 +1,12 @@
+@startuml ホテル
+'left to right direction
+actor 利用者 as user 
+rectangle ホテル宿泊予約{
+    usecase キャンペーン as C
+    usecase (<u>予約</u>\n拡張点\nキャンペーン期間) as input
+    usecase ログイン as L
+}
+C .> input : <<extend>>
+input .> L : <<include>>
+user --> input 
+@enduml
