@@ -1,0 +1,11 @@
+@startuml パッケージ
+package 選択授業
+package 学生
+package 先生
+package java応用ゼミ
+
+選択授業 -- 学生
+選択授業
+
+
+@enduml
