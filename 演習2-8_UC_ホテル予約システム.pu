@@ -1,0 +1,25 @@
+@startuml 演習2-8
+left to right direction
+actor 利用者 as user
+actor ホテル従業員 as employee
+actor ホテル管理者 as admin
+
+rectangle "ホテル予約システム" {
+  user --> (空室状況の閲覧)
+  user --> (予約の作成)
+
+  employee --> (空室状況の入力)
+
+  admin --> (予約の集計)
+
+  user --> (ログイン)
+  user --> (会員登録)
+  user --> (会員登録のみ)
+
+  employee --> (ログイン)
+  admin --> (ログイン)
+
+  (キャンペーン期間中の宿泊費割引) --> (空室状況の閲覧)
+  (キャンペーン期間中の宿泊費割引) --> (予約の作成)
+}
+@enduml

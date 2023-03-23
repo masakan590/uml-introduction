@@ -1,0 +1,16 @@
+@startuml 演習2-6
+left to right direction
+actor 人事担当者 as jinji
+actor 社員 as syain
+
+rectangle "従業員登録システム" {
+    usecase 社員の情報を登録する as touroku 
+    usecase 社員情報を参照する as sannsyou
+    
+    usecase 社員情報の修正をする as syuusei
+}
+  jinji --> touroku
+  syain --> sannsyou
+  
+  jinji --> syuusei
+@enduml

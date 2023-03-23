@@ -1,0 +1,12 @@
+@startuml 盛岡商事 演習2-5
+left to right direction
+
+actor 出荷担当者 as syuka
+
+rectangle 販売管理システム {
+    usecase 注文商品を確認する as K
+    usecase 出荷状況の登録をする as T
+}
+  syuka --> K
+  syuka --> T
+@enduml
