@@ -1,0 +1,33 @@
+@startuml 
+skinparam classAttributeIconSize 0 
+class Employee{
+    -id:Int = 0
+    -name:String
+    #depertment : String
+    /勤続年数: Int
+    ---
+    +setId(id:int):void
+    +getId():int
+    +setName(name:String):void
+    +getName():String
+    +setDept(dept:String):void
+    +getDept():String
+} 
+' class A <<補足>> {}
+' class B {
+' -属性１,Int
+' -属性２,String
+' }
+' class C {
+' ---
+' +操作１():void
+' +操作２():String
+' }
+' class D {
+'     -属性１:Int
+'     -属性２:String
+'     ---
+'     +操作１():void
+'     +操作２():String
+' }
+@enduml
