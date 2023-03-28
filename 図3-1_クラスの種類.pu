@@ -1,5 +1,6 @@
 @startuml 
 skinparam classAttributeIconSize 0 
+hide Employee circle
 class Employee{
     -id:Int = 0
     -name:String
