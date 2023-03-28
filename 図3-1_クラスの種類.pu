@@ -1,6 +1,5 @@
 @startuml 
 skinparam classAttributeIconSize 0 
-hide Employee circle
 class Employee{
     -id:Int = 0
     -name:String
@@ -31,4 +30,5 @@ class Employee{
 '     +操作１():void
 '     +操作２():String
 ' }
+hide Employee circle
 @enduml
