@@ -1,0 +1,34 @@
+@startuml
+object "<u>テレビ:商品</u>" as T{
+    形式=v12345
+}
+
+object "<u>冷蔵庫:商品</u>" as R{
+    型式=R7865
+}
+
+object "<u>プロジェクタ:商品</u>" as P{
+    型式=P1122
+}
+object "<u>高橋洋平:重要顧客</u>" as J
+object "<u>高田利恵:顧客</u>" as k1
+object "<u>大坪直之:顧客</u>" as k2
+object "<u>11月21日:注文</u>" as T1{
+    数量 = 2
+}
+
+object "<u>11月21日:注文</u>" as T2{
+    数量 = 1
+}
+
+object "<u>12月23日:注文</u>" as T3{
+    数量 = 1
+}
+
+J -- T1
+J -- T2
+T1 -- T 
+T2 -- R 
+k1 -- T3
+k1 -- R
+@enduml

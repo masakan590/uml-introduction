@@ -1,0 +1,20 @@
+@startuml
+object "<u>高橋洋平:社員</u>" as syain{
+
+}
+object "<u>樋口正之:社員</u>" as syain2{
+
+}
+
+object "<u>情情報処理安全確保支援士:資格</u>" as jyou {
+
+}
+
+object "<u>Linuc試験Level1:資格</u>" as linuc {
+
+}
+
+syain -- jyou 
+syain -- linuc
+syain2 -- linuc
+@enduml

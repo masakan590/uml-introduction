@@ -1,0 +1,11 @@
+@startuml クラス図
+left to right direction
+class 医局 
+class 患者 
+class 医師 
+class 診察記録 
+
+医師 "1" -- "1..*" 医局 : 所属
+医師 "1..*" -- "1..*" 患者 : 診察する
+医師 "*" -- "0..*" 診察記録 : 作成
+@enduml

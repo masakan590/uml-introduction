@@ -1,0 +1,14 @@
+@startuml
+left to right direction
+object 車 
+object "タイヤ１" as tiya1
+object "タイヤ２" as tiya2
+object "タイヤ３" as tiya3
+object "タイヤ４" as tiya4
+
+車 --- tiya1
+車 --- tiya2
+車 --- tiya3
+車 --- tiya4
+
+@enduml

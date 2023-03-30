@@ -1,0 +1,20 @@
+@startuml
+object "<u>Aさん:利用者</u>" as U1 {
+
+}
+object "<u>Bさん:利用者</U>" as U2 {
+
+}
+object "<u>301号室:部屋</u>" as R301 {
+
+}
+object "<u>302号室:部屋</u>" as R302 {
+
+}
+object "<u>303号室:部屋</u>" as R303 {
+
+}
+
+U1 -- R301
+U2 -- R303
+@enduml
