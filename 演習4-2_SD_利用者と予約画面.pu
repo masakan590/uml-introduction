@@ -1,0 +1,11 @@
+@startuml
+hide footbox
+participant "利用者:ログイン" as user
+participant ":予約画面" as screen
+activate user
+user -> screen :ログイン()
+activate screen 
+screen -> screen :認証()
+activate screen 
+deactivate screen 
+@enduml

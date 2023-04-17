@@ -1,0 +1,15 @@
+@startuml
+hide footbox
+Actor ":客" as user
+participant ":フロア店員" as waiter  
+participant ":料理人" as chief  
+mainframe sd ラーメン屋さん
+activate user 
+user -> waiter :ラーメンを注文する
+activate waiter
+waiter -> chief :調理を指示する
+activate chief
+chief -> chief :調理をする
+waiter <<-- chief :ラーメンの完成を伝える
+user <<-- waiter :ラーメンを配膳する
+@enduml

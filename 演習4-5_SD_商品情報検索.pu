@@ -1,0 +1,32 @@
+@startuml
+hide footbox
+Actor ":会員" as user
+participant ":" as boundary <<boundary>>
+participant ":" as control <<control>>
+participant ":" as entity1 <<entity>>
+participant ":" as entity2 <<entity>>
+activate user
+user -> boundary
+activate boundary
+boundary -> control
+activate control
+loop 商品カテゴリ数
+control -->> entity1
+end loop
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@enduml
