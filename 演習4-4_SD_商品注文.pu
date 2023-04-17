@@ -3,6 +3,7 @@ hide footbox
 Actor 受注係 as user 
 participant ":注文登録画面" as boundary <<boundary>>
 participant ":商品" as entity <<entity>>
+participant ":注文" as ent <<entity>>
 activate user
 activate boundary 
 activate entity  
@@ -17,8 +18,8 @@ deactivate boundary
 user -> boundary :商品登録(注文情報)
 deactivate user 
 activate boundary
-activate ur 
-create ":注文" as ur <<entity>>
-boundary -->> ur : 生成する<< create >> 
-
+create ent 
+boundary -->> ent :生成する <<create>>
+activate ent 
+deactivate ent 
 @enduml

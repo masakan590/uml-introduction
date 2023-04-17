@@ -1,0 +1,21 @@
+@startuml  
+hide footbox
+Actor ":ユーザー" as ac 
+participant ":ブラウザ" as bu
+participant ":Webサーバー" as we
+participant ":画像サーバー" as ga
+activate ac
+ac -> bu :リダイレクトを押す
+activate bu
+bu -> we :画像ファイル名を渡す
+activate we
+we -> ga :画像ファイルを探す命令を出す
+activate ga
+ga -> ga :画像ファイルを探す
+we <<-- ga :画像ファイル
+deactivate ga
+bu <<-- we :HTMLと画像ファイル
+deactivate we
+ac <<-- bu :画像の閲覧
+deactivate ac
+@enduml

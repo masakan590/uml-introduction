@@ -1,32 +1,26 @@
-@startuml
+@startuml  
 hide footbox
 Actor ":会員" as user
-participant ":" as boundary <<boundary>>
-participant ":" as control <<control>>
-participant ":" as entity1 <<entity>>
-participant ":" as entity2 <<entity>>
+participant ":商品検索画面" as bon <<boundary>> 
+participant ":商品検索コントローラ" as con <<control>>
+participant ":商品" as ent <<entity>>
+participant ":商品カテゴリ" as ent1 <<entity>>
 activate user
-user -> boundary
-activate boundary
-boundary -> control
-activate control
-loop 商品カテゴリ数
-control -->> entity1
+user -> bon :商品検索(商品番号)
+activate bon
+bon -> con :商品検索(商品番号)
+activate con
+create ent
+con -->> ent :<<create>>生成()
+loop "商品カテゴリ数"
+create ent1
+con -->> ent1:<<create>>生成()
+con -> ent :商品カテゴリ設定
+activate ent
+deactivate ent
 end loop
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+bon <<-- con :商品情報
+deactivate con 
+bon -> bon :商品情報表示(商品情報)
+activate bon
 @enduml
