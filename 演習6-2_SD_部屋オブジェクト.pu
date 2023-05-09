@@ -1,0 +1,22 @@
+@startuml
+
+state ホテル{
+state entry <<entryPoint>>
+state exit <<exitPoint>>
+entry -> 空室
+空室-down-> 予約済
+予約済-up-> 利用中
+予約済-->空室
+利用中-->空室
+利用中-right-> exit
+} 
+[*] --> entry
+exit -> [*]
+
+
+
+
+
+
+
+@enduml
