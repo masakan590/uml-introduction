@@ -1,24 +1,32 @@
 @startuml
 left to right direction
 actor 利用者 as user
-rectangle 利用者用機能 {
-  usecase 収支の入力 as input
-  usecase 収支の閲覧 as view
-  usecase 収支の削除 as delete
-  usecase 利用者ログイン as user_login
-  usecase カテゴリーの追加 as cat_add
-  usecase カテゴリーの閲覧 as cat_see
-  usecase 目標金額の設定 as set_goal
-  usecase ログアウト as logout
-  usecase タイトル変更 as tit_cng
+actor 管理者 as admin
+
+rectangle システム {
+  usecase ログイン as login
+  usecase 管理者ログイン as admin_login
+  usecase 目標金額登録 as set_goal
+  usecase 収入登録 as add_income
+  usecase 消費した金額登録 as add_expense
+  usecase レシートの画像認識 as image_recognition
+  usecase カテゴリー編集 as manage_category
+  usecase 計算機能 as calculations
+  usecase タイトル編集 as edit_title
+  usecase 日報作成機能 as create_report
+  usecase アカウント管理 as account_management
+  
+  user --> login
+  user --> set_goal
+  user --> add_income
+  user --> add_expense
+  user --> image_recognition
+  user --> manage_category
+  user --> calculations
+  user --> edit_title
+  user --> create_report
+  admin --> adminlogin
+  admin --> account_management
 }
-set_goal --> input
-set_goal --> view
-set_goal --> delete
-user -- user_login
-set_goal --> cat_add
-set_goal --> cat_see
-user_login --> set_goal
-user_login --> logout
-set_goal --> tit_cng
+
 @enduml
