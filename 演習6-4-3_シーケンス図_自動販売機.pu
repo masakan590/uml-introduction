@@ -1,0 +1,26 @@
+@startuml
+actor 客
+participant ボタン
+participant 料金装置
+participant ベンダー装置
+
+客 -> ボタン: ドリンク選択
+activate ボタン
+ボタン -> 料金装置: 支払い要求
+activate 料金装置
+料金装置 -> 料金装置: 支払い処理
+料金装置 --> ボタン: 支払い完了
+deactivate 料金装置
+deactivate ボタン
+
+ボタン -> ベンダー装置: ドリンク提供要求
+activate ベンダー装置
+ベンダー装置 -> ベンダー装置: ドリンク提供
+ベンダー装置 --> ボタン: ドリンク提供
+deactivate ベンダー装置
+
+ボタン -> 客: ドリンクを手にする
+activate 客
+deactivate 客
+
+@enduml

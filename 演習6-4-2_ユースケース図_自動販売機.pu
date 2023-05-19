@@ -1,0 +1,14 @@
+@startuml
+left to right direction
+actor 客
+actor ベンダー
+
+usecase ドリンク選択 as "1. ドリンク選択"
+usecase 支払い as "2. 支払い"
+usecase ドリンク提供 as "3. ドリンク提供"
+
+客 --> ドリンク選択
+客 --> 支払い
+ベンダー --> ドリンク提供
+
+@enduml
