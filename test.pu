@@ -3,9 +3,8 @@ left to right direction
 actor 利用者 as user
 actor 管理者 as admin
 
-rectangle システム {
+rectangle 利用者機能 {
   usecase ログイン as login
-  usecase 管理者ログイン as admin_login
   usecase 目標金額登録 as set_goal
   usecase 収入登録 as add_income
   usecase 消費した金額登録 as add_expense
@@ -14,7 +13,7 @@ rectangle システム {
   usecase 計算機能 as calculations
   usecase タイトル編集 as edit_title
   usecase 日報作成機能 as create_report
-  usecase アカウント管理 as account_management
+  
   
   user --> login
   user --> set_goal
@@ -25,8 +24,15 @@ rectangle システム {
   user --> calculations
   user --> edit_title
   user --> create_report
-  admin --> admin_login
-  admin --> account_management
 }
 
+  rectangle 管理者機能 {
+  usecase 管理者ログイン as admin_login
+  usecase ログアウト as account_logout
+
+  admin --> admin_login
+  admin --> account_logout
+  
+
+}
 @enduml
