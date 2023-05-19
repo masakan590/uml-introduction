@@ -1,33 +1,24 @@
 @startuml
 left to right direction
-mainframe sd 家計簿システム
 actor 利用者 as user
 rectangle 利用者用機能 {
   usecase 収支の入力 as input
   usecase 収支の閲覧 as view
   usecase 収支の削除 as delete
-usecase 利用者ログイン as user_login
+  usecase 利用者ログイン as user_login
+  usecase カテゴリーの追加 as cat_add
+  usecase カテゴリーの閲覧 as cat_see
+  usecase 目標金額の設定 as set_goal
+  usecase ログアウト as logout
+  usecase タイトル変更 as tit_cng
 }
-
-actor 管理者 as admin
-rectangle 管理者用機能 {
-  usecase 利用者の登録 as register
-  usecase 利用者情報の閲覧 as view_user
-  usecase 収支情報の閲覧 as view_all
-  usecase 収支情報の削除 as delete_all
-  usecase 管理者ログイン as admin_login
-}
-
-
-user_login --> input
-user_login --> view
-user_login --> delete
-user --> user_login
-
-admin --> admin_login
-admin_login --> register
-admin_login --> view_user
-admin_login --> view_all
-admin_login --> delete_all
-
+set_goal --> input
+set_goal --> view
+set_goal --> delete
+user -- user_login
+set_goal --> cat_add
+set_goal --> cat_see
+user_login --> set_goal
+user_login --> logout
+set_goal --> tit_cng
 @enduml
