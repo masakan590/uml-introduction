@@ -25,7 +25,7 @@ rectangle システム {
   user --> calculations
   user --> edit_title
   user --> create_report
-  admin --> adminlogin
+  admin --> admin_login
   admin --> account_management
 }
 
