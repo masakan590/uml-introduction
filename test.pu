@@ -7,7 +7,8 @@ rectangle 利用者機能 {
   usecase ログイン as login
   usecase カレンダー表示 as show_calendar
   usecase 日報作成 as create_report
-  usecase カテゴリー選択と収支入力 as select_category_input
+  usecase カテゴリー選択 as select_category_input
+  usecase 収入入力 as sup_input
   usecase 合計金額更新 as update_total
   usecase 目標金額登録 as set_goal
   usecase 消費した金額登録 as add_expense
@@ -28,8 +29,9 @@ rectangle 利用者機能 {
   show_calendar --> edit_title
   show_calendar --> create_report :<<include>>
   create_report --> select_category_input :<<include>>
-  select_category_input --> update_total :<<include>>
-  
+  select_category_input --> sup_input :<<include>>
+  sup_input --> update_total :<<include>>
+  create_report --> update_total 
 }
 
 
