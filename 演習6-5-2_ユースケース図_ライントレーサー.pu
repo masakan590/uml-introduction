@@ -1,0 +1,25 @@
+@startuml
+actor ユーザー as User
+
+rectangle ライントレーサー {
+  usecase モーター起動
+  usecase モーター停止
+  usecase ライン追跡
+}
+
+rectangle 光センサー {
+  usecase 暗い判断
+  usecase 明るい判断
+}
+
+User --> モーター起動
+User --> モーター停止
+User --> ライン追跡
+
+モーター起動 --> ライントレーサー
+モーター停止 --> ライントレーサー
+ライン追跡 --> ライントレーサー
+ライントレーサー --> 暗い判断
+ライントレーサー --> 明るい判断
+
+@enduml
