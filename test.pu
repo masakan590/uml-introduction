@@ -10,27 +10,25 @@ rectangle 利用者機能 {
   usecase カテゴリー選択と収支入力 as select_category_input
   usecase 合計金額更新 as update_total
   usecase 目標金額登録 as set_goal
-  usecase 収入登録 as add_income
   usecase 消費した金額登録 as add_expense
   usecase レシートの画像認識 as image_recognition
   usecase カテゴリー編集 as manage_category
   usecase 計算機能 as calculations
   usecase タイトル編集 as edit_title
-  usecase 日報編集機能 as create_report
+  usecase 日報追加機能 as create_report
   
   
   user --> login
   login --> show_calendar
   show_calendar --> set_goal
-  show_calendar --> add_income
   show_calendar --> add_expense
   show_calendar --> image_recognition
   show_calendar --> manage_category
   show_calendar --> calculations
   show_calendar --> edit_title
-  show_calendar --> create_report
-  create_report --> select_category_input
-  select_category_input --> update_total
+  show_calendar --> create_report :<<include>>
+  create_report --> select_category_input :<<include>>
+  select_category_input --> update_total :<<include>>
   
 }
 
@@ -38,9 +36,11 @@ rectangle 利用者機能 {
 
 rectangle 管理者機能 {
   usecase 管理者ログイン as admin_login
+  usecase ユーザー管理 as user_kan
   usecase ログアウト as account_logout
 
   admin --> admin_login
+  admin_login --> user_kan
   admin_login --> account_logout
 }
 
