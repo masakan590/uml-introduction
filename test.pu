@@ -27,7 +27,7 @@ rectangle 利用者機能 {
   show_calendar --> manage_category
   show_calendar --> calculations
   show_calendar --> edit_title
-  show_calendar --> create_report :<<include>>
+  show_calendar <-- create_report :<<include>>
   create_report <-- select_category_input :<<include>>
   create_report <-- sup_input :<<include>>
   create_report -right-> update_total
