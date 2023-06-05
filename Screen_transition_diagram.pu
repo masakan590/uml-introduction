@@ -1,4 +1,4 @@
-@startuml 画面遷移図
+@startuml Screen_transition_diagram
 left to right direction
 [*] -> 利用者ログイン画面
 [*] --> 管理者ログイン画面
