@@ -47,11 +47,18 @@ class "目標金額テーブル" as u_trag <<(T,LightYellow)>>
   + trag_main : int
 }
 
+class "差額計算結果格納テーブル" as u_dif <<(T,PaleGreen)>>
+{
+  + dif_id : int <<PK>>
+  + dif_main : int
+}
+
 ' Relationships with multiplicities
 u_account -- "1..*" category
 daily_report -- "1..*" category
 u_account -- "1..*" daily_report
 u_account -- "1..*" u_calender
 u_account -- "1..*" u_trag
+u_account -- "1..*" u_dif
 
 @enduml
