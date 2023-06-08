@@ -1,0 +1,57 @@
+@startuml
+
+!define TABLE_BORDER_STYLE
+!define TABLE_ROW_BACKGROUND_COLOR white
+!define TABLE_HEADER_BACKGROUND_COLOR LightGray
+
+!define ENTITY1
+!define ENTITY2
+
+hide circle
+
+skinparam class {
+    BackgroundColor White
+    ArrowColor Black
+    BorderColor Black
+}
+
+' Tables
+class "ユーザーアカウントテーブル" as u_account <<(T,LightBlue)>>
+{
+  + u_id : int <<PK>>
+  + u_password : string
+  + u_mail : string
+}
+
+class "カテゴリーテーブル" as category <<(T,LightGreen)>>
+{
+  + category_id : int <<PK>>
+  + category_main : string
+}
+
+class "日報テーブル" as daily_report <<(T,Yellow)>>
+{
+  + daily_id : int <<PK>>
+  + daily_main : string
+}
+
+class "カレンダーテーブル" as u_calender <<(T,LightPink)>>
+{
+  + calender_id : int <<PK>>
+  + calender_main : date
+}
+
+class "目標金額テーブル" as u_trag <<(T,LightYellow)>>
+{
+  + trag_id : int <<PK>>
+  + trag_main : int
+}
+
+' Relationships with multiplicities
+u_account -- "1..*" category
+daily_report -- "1..*" category
+u_account -- "1..*" daily_report
+u_account -- "1..*" u_calender
+u_account -- "1..*" u_trag
+
+@enduml
